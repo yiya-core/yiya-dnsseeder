@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  dnsseed:
+    build: .
+    image: yiyacoin/dnsseeder
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    environment:
+      - PORT=5353
+      - HOSTNAME=dnsseeds.yiyaproject.com
+      - NAMESERVER=vps.yiyaproject.com
+      - EMAIL=admin@yiyaproject.com
+    ports:
+      - "53:5353/udp"
+      - "53:5353/tcp"

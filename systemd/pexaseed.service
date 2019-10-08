@@ -1,0 +1,18 @@
+# /etc/systemd/system/yiyaseed.service
+
+[Unit]
+Description=Yiya Coin DNS Seed Service - mainnet
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/dnsseed -h dnsseeds.yiyaproject.com -n vps.yiyaproject.com -m admin@yiyaproject.com -p 53
+KillMode=process
+Restart=always
+## security
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=full
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
