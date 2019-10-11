@@ -5,7 +5,7 @@ Description=Yiya Coin DNS Seed Service - mainnet
 After=network.target
 
 [Service]
-ExecStart=/usr/local/bin/dnsseed -h dnsseeds.yiyaproject.com -n vps.yiyaproject.com -m admin@yiyaproject.com -p 53
+ExecStart=/usr/local/bin/dnsseed -h yiya.stance-defense.org -n 209.250.255.250 -m yiya-dev@protonmail.com -p 53
 KillMode=process
 Restart=always
 ## security
