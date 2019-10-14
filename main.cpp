@@ -400,20 +400,18 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"pool.yiya.dev", "seeds.yiya.dev", ""};
+static const string mainnet_seeds[] = {"ns1.yinyang.website", "seeds.yiya.dev", ""};
 static const string testnet_seeds[] = {"testnet-seed1.yiyacoin.org", ""};
 
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
   if (!fTestNet){
-    db.Add(CService("174.138.55.214", 15792), true);
-    db.Add(CService("97.94.59.102", 15792), true);
-    db.Add(CService("140.82.43.171", 15792), true);
-    db.Add(CService("190.79.235.65", 15792), true);
-    db.Add(CService("114.74.180.176", 15792), true);
-    db.Add(CService("190.74.20.72", 15792), true);
-    db.Add(CService("190.36.240.107", 15792), true);
+    db.Add(CService("209.250.255.250", 15792), true);
+    db.Add(CService("207.148.90.23", 15792), true);
+    db.Add(CService("45.76.18.123", 15792), true);
+    db.Add(CService("155.138.151.105 ", 15792), true);
+    db.Add(CService("149.28.189.166 ", 15792), true);
   }
   do {
     for (int i=0; seeds[i] != ""; i++) {
